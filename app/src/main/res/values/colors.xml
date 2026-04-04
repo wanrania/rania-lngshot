@@ -2,4 +2,6 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="pink">#FCE4E4</color>
+    <color name="pink2">#FF8FA3</color>
 </resources>
