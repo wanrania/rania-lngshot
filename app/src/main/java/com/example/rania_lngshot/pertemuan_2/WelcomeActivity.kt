@@ -16,6 +16,6 @@ class WelcomeActivity : AppCompatActivity() {
 
         val username = intent.getStringExtra("USERNAME")
 
-        binding.tvWelcome.text = "Selamat Datang, $username 🎉"
+        binding.tvWelcome.text = "Selamat Datang, $username 🩷"
     }
 }
