@@ -11,10 +11,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ranialngshot">
         <activity
-            android:name=".pertemuan_2.WelcomeActivity"
+            android:name=".pertemuan_4.Custom2Activity"
             android:exported="false" />
         <activity
-            android:name=".pertemuan_2.LoginActivity"
+            android:name=".pertemuan_4.Custom1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".pertemuan_4.RumusActivity"
+            android:exported="false" />
+        <activity
+            android:name=".pertemuan_4.MainnActivity"
+            android:exported="false" />
+        <activity
+            android:name=".pertemuan_4.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,8 +36,13 @@
             android:exported="false" />
         <activity
             android:name=".pertemuan_2.SecondActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false" />
+        <activity
+            android:name=".pertemuan_2.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".pertemuan_2.WelcomeActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
