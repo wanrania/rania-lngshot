@@ -4,4 +4,27 @@
     <color name="white">#FFFFFFFF</color>
     <color name="pink">#FCE4E4</color>
     <color name="pink2">#FF8FA3</color>
+
+    <!-- Warna utama Bina Desa -->
+    <color name="primary">#3B5BDB</color>
+    <color name="primary_dark">#2C2F8F</color>
+    <color name="primary_light">#6C3CF0</color>
+
+    <!-- Background -->
+    <color name="background">#FFFFFF</color>
+
+    <!-- Text -->
+    <color name="text_primary">#000000</color>
+    <color name="text_secondary">#666666</color>
+
+    <!-- Input -->
+    <color name="input_bg">#F1F1F1</color>
+    <color name="input_hint">#9E9E9E</color>
+
+    <!-- Button -->
+    <color name="button_color">#3B5BDB</color>
+    <color name="button_text">#FFFFFF</color>
+
+    <!-- Tambahan -->
+    <color name="gray">#CCCCCC</color>
 </resources>

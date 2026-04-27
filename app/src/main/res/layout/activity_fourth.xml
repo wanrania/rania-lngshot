@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <!-- Toolbar (id="toolbar") -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/primary"
+            app:titleTextColor="@color/button_text" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- ScrollView Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Data Display (id="tvData") -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="12dp"
+                app:strokeColor="@color/primary"
+                app:strokeWidth="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="28dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="📋 Data Desa Binaan"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_primary"
+                        android:layout_marginBottom="24dp"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:id="@+id/tvData"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nama Program: Program Bina Desa\nLokasi: Desa Binaan\nTahun: 2024"
+                        android:textSize="16sp"
+                        android:textColor="@color/text_primary"
+                        android:lineSpacingExtra="6dp"
+                        android:padding="20dp"
+                        android:background="@color/input_bg"
+                        android:minHeight="120dp"
+                        android:gravity="center_vertical"
+                        android:layout_marginHorizontal="8dp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Buttons Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="⚙️ Aksi"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Kembali Button (id="btnKembali") -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnKembali"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginBottom="16dp"
+                android:text="🏠 Kembali ke Dashboard"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:iconTint="@color/button_text"
+                app:iconGravity="start"
+                app:iconPadding="16dp"
+                app:cornerRadius="20dp"
+                app:backgroundTint="@color/button_color" />
+
+            <!-- Snackbar Button (id="btnShowSnackbar") -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnShowSnackbar"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginBottom="16dp"
+                android:text="📱 Test Snackbar"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:iconTint="@color/primary"
+                app:iconGravity="start"
+                app:iconPadding="16dp"
+                app:cornerRadius="20dp"
+                app:strokeColor="@color/primary"
+                app:strokeWidth="2dp" />
+
+            <!-- AlertDialog Button (id="btnShowAlertDialog") -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnShowAlertDialog"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:text="💬 Test Dialog"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:iconTint="@color/button_text"
+                app:iconGravity="start"
+                app:iconPadding="16dp"
+                app:cornerRadius="20dp"
+                app:backgroundTint="@color/primary_light" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
