@@ -1,26 +1,24 @@
-package com.example.rania_lngshot.pertemuan_4
+package com.example.rania_lngshot.home.pertemuan_4
 
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.rania_lngshot.R
-import com.google.android.material.snackbar.Snackbar
 
-class Custom1Activity : AppCompatActivity() {
+class RumusActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_custom1)
+        setContentView(R.layout.activity_rumus)
 
-        Log.e("onCreate", "Custom1Activity dibuat")
+        Log.e("onCreate", "RumusActivity dibuat")
 
-        // INSETS
+        // INSETS (BIAR AMAN DARI STATUS BAR)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -30,32 +28,27 @@ class Custom1Activity : AppCompatActivity() {
         // AMBIL DATA DARI INTENT
         val title = intent.getStringExtra("title")
         val desc = intent.getStringExtra("desc")
+        val age = intent.getIntExtra("age", 0)
 
-        // HUBUNGKAN KE VIEW
+        Log.e("Intent", "Title: $title, Desc: $desc, Age: $age")
+
+        // TAMPILKAN KE TEXTVIEW
         val tvTitle = findViewById<TextView>(R.id.tvTitle)
         val tvDesc = findViewById<TextView>(R.id.tvDesc)
-        val btnSnackbar = findViewById<Button>(R.id.btnSnackbar)
+        val tvRumus = findViewById<TextView>(R.id.tvRumus)
 
         tvTitle.text = title
         tvDesc.text = desc
-
-        // SNACKBAR
-        btnSnackbar.setOnClickListener {
-            Snackbar.make(it, "Ini adalah Custom 1", Snackbar.LENGTH_SHORT)
-                .setAction("Tutup") {
-                    Log.e("Snackbar", "Ditutup")
-                }
-                .show()
-        }
+        tvRumus.text = "Contoh Rumus:\nVolume Kubus = s × s × s"
     }
 
     override fun onStart() {
         super.onStart()
-        Log.e("onStart", "Custom1Activity tampil")
+        Log.e("onStart", "RumusActivity tampil")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.e("onDestroy", "Custom1Activity dihancurkan")
+        Log.e("onDestroy", "RumusActivity dihancurkan")
     }
 }

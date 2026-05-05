@@ -3,17 +3,14 @@ package com.example.rania_lngshot
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.webkit.WebViewClient
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import com.example.rania_lngshot.databinding.ActivityMainBinding
-import com.example.rania_lngshot.pertemuan_4.FourthActivity
-import com.example.rania_lngshot.pertemuan_4.WebViewActivity
-import com.example.rania_lngshot.AuthActivity
+import com.example.rania_lngshot.home.pertemuan_4.FourthActivity
+import com.example.rania_lngshot.home.pertemuan_4.WebViewActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.coroutines.launch
 

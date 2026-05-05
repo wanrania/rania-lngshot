@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8F5E9"
+    android:padding="24dp"
+    tools:context=".about.AboutFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#1B5E20"
+        android:textSize="16sp"
+        android:lineSpacingExtra="8dp"
+        android:text="🌿 PEMBANGUNAN &amp; MONITORING BINA DESA\n\n📖 APA ITU BINA DESA?\nProgram terpadu untuk merencanakan, melaksanakan, dan mengawasi pembangunan infrastruktur desa secara transparan agar warga lebih sejahtera.\n\n✨ FITUR UTAMA\n• 📝 Perencanaan Proyek: Susun alokasi dana &amp; target pembangunan desa.\n• 🔍 Monitoring Progres: Pantau status &amp; dokumentasi proyek secara real-time.\n• 💰 Transparansi Anggaran: Pencatatan rincian dana untuk mencegah penyalahgunaan.\n• 🤝 Partisipasi Warga: Wadah aspirasi &amp; pelaporan kendala langsung dari warga." />
+
+</ScrollView>

@@ -1,4 +1,4 @@
-package com.example.rania_lngshot.pertemuan_2
+package com.example.rania_lngshot.home.pertemuan_2
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

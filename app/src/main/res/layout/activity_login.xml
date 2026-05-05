@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:background="@color/pink"
     android:padding="24dp"
-    tools:context=".pertemuan_2.LoginActivity">
+    tools:context=".home.pertemuan_2.LoginActivity">
 
     <ImageView
         android:id="@+id/logo"
