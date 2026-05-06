@@ -14,10 +14,13 @@
         android:theme="@style/Theme.Ranialngshot"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
             android:name=".home.pertemuan_7.SeventhActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".BaseActivity"
             android:exported="false" />
         <activity
             android:name=".home.pertemuan_4.FourthActivity"
@@ -44,7 +47,7 @@
             android:name=".home.pertemuan_4.MainnActivity"
             android:exported="false" />
         <activity
-            android:name=".BaseActivity"
+            android:name=".SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

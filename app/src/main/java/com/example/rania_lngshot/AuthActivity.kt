@@ -45,32 +45,51 @@ class AuthActivity : AppCompatActivity() {
 
     private fun setupClickListeners(sharedPref: android.content.SharedPreferences) {
         binding.btnLogin.setOnClickListener {
+
             val username = binding.etUsername.text.toString().trim()
             val password = binding.etPassword.text.toString().trim()
 
-            // Validasi input
-            if (username.isEmpty() || password.isEmpty()) {
-                showErrorDialog("Mohon isi username dan password")
+            val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+
+            val savedUser = sharedPref.getString("username", "")
+            val savedPass = sharedPref.getString("password", "")
+
+            // VALIDASI KOSONG
+            if (username.isEmpty()) {
+                binding.etUsername.error = "Username wajib diisi"
                 return@setOnClickListener
             }
 
-            // Login logic sederhana (username == password)
-            if (username == password) {
-                // Simpan data login ke SharedPreferences
+            if (password.isEmpty()) {
+                binding.etPassword.error = "Password wajib diisi"
+                return@setOnClickListener
+            }
+
+            // 🔥 RULE 1: username == password
+            val rule1 = username == password
+
+            // 🔥 RULE 2: sesuai SharedPreferences
+            val rule2 = username == savedUser && password == savedPass
+
+            if (rule1 || rule2) {
+
+                // simpan status login
                 val editor = sharedPref.edit()
                 editor.putBoolean("isLogin", true)
-                editor.putString("username", username)
                 editor.apply()
 
-                // Pindah ke MainActivity dengan animasi smooth
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, BaseActivity::class.java)
                 startActivity(intent)
-                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
                 finish()
+
             } else {
-                // Tampilkan error dialog
-                showErrorDialog("Username atau password salah!\nCoba gunakan: admin / admin")
+                binding.etPassword.error = "Username atau password salah"
             }
+        }
+
+        binding.btnRegister.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
         }
     }
 
