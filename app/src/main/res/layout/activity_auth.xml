@@ -1,84 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    android:fillViewport="true"
-    android:padding="24dp">
+    android:fillViewport="true">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:padding="24dp">
 
-        <!-- Logo Bina Desa -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"
-            android:gravity="center"
-            android:orientation="vertical">
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="24dp"
+            android:contentDescription="Logo Bina Desa"
+            android:elevation="8dp"
+            android:src="@drawable/ic_bina_desa"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/ic_bina_desa"
-                android:contentDescription="Logo Bina Desa"
-                android:elevation="8dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="BINA DESA"
-                android:textSize="32sp"
-                android:textStyle="bold"
-                android:textColor="@color/primary"
-                android:fontFamily="sans-serif-medium" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Pemberdayaan Masyarakat Desa"
-                android:textSize="14sp"
-                android:textColor="@color/text_secondary"
-                android:alpha="0.8" />
-
-        </LinearLayout>
-
-        <!-- Welcome Text -->
+        <!-- App Name -->
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="BINA DESA"
+            android:textColor="@color/primary"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgLogo" />
+
+        <!-- Subtitle -->
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:alpha="0.8"
+            android:text="Pemberdayaan Masyarakat Desa"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+        <!-- Welcome -->
+        <TextView
+            android:id="@+id/tvWelcome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
             android:text="Selamat Datang"
+            android:textColor="@color/text_primary"
             android:textSize="28sp"
             android:textStyle="bold"
-            android:textColor="@color/text_primary"
-            android:gravity="center"
-            android:layout_marginBottom="8dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSubtitle" />
 
+        <!-- Description -->
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/tvDesc"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Silahkan login untuk mengakses aplikasi Bina Desa"
-            android:textSize="16sp"
-            android:textColor="@color/text_secondary"
+            android:layout_marginTop="8dp"
             android:gravity="center"
-            android:layout_marginBottom="40dp"
-            android:lineSpacingExtra="4dp" />
+            android:lineSpacingExtra="4dp"
+            android:text="Silahkan login untuk mengakses aplikasi Bina Desa"
+            android:textColor="@color/text_secondary"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvWelcome" />
 
-        <!-- Username Input -->
+        <!-- Username -->
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:id="@+id/layoutUsername"
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
             app:boxStrokeColor="@color/primary"
+            app:boxStrokeWidth="2dp"
             app:hintTextColor="@color/input_hint"
-            app:startIconTint="@color/primary"
-            app:boxStrokeWidth="2dp">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDesc"
+            app:startIconTint="@color/primary">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etUsername"
@@ -90,18 +110,21 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Password Input -->
+        <!-- Password -->
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
+            android:id="@+id/layoutPassword"
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             app:boxStrokeColor="@color/primary"
-            app:hintTextColor="@color/input_hint"
-            app:startIconTint="@color/primary"
+            app:boxStrokeWidth="2dp"
             app:endIconMode="password_toggle"
             app:endIconTint="@color/primary"
-            app:boxStrokeWidth="2dp">
+            app:hintTextColor="@color/input_hint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutUsername">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPassword"
@@ -117,68 +140,106 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnLogin"
             style="@style/Widget.Material3.Button"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="56dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginTop="32dp"
             android:text="MASUK"
             android:textSize="16sp"
             android:textStyle="bold"
             app:cornerRadius="16dp"
-            app:iconTint="@color/button_text"
-            app:iconPadding="12dp"
             app:iconGravity="start"
+            app:iconPadding="12dp"
+            app:iconTint="@color/button_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutPassword"
             app:strokeColor="@color/primary_light"
             app:strokeWidth="1dp" />
 
-        <Button
+        <!-- Register Button -->
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnRegister"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Registrasi"
-            android:layout_marginTop="10dp"/>
+            style="@style/Widget.Material3.Button"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="12dp"
+            android:text="REGISTRASI"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary"
+            app:backgroundTint="@android:color/white"
+            app:cornerRadius="16dp"
+            app:iconGravity="start"
+            app:iconPadding="12dp"
+            app:iconTint="@color/primary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnLogin"
+            app:strokeColor="@color/primary"
+            app:strokeWidth="1.5dp" />
 
         <!-- Divider -->
         <View
-            android:layout_width="match_parent"
+            android:id="@+id/divider"
+            android:layout_width="0dp"
             android:layout_height="1dp"
+            android:layout_marginTop="24dp"
             android:background="@color/gray"
-            android:layout_marginBottom="24dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnRegister" />
 
-        <!-- Demo Credentials -->
-        <LinearLayout
-            android:layout_width="match_parent"
+        <!-- Demo Login -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/demoLayout"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:padding="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
             android:background="?attr/selectableItemBackground"
-            android:layout_marginBottom="24dp">
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider">
 
             <TextView
+                android:id="@+id/tvDemo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="🧪 Demo Login"
+                android:textColor="@color/primary"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                android:textColor="@color/primary"
-                android:layout_marginBottom="4dp" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:id="@+id/tvUser"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:text="Username: admin"
+                android:textColor="@color/text_secondary"
                 android:textSize="12sp"
-                android:textColor="@color/text_secondary" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDemo" />
 
             <TextView
+                android:id="@+id/tvPass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:text="Password: admin"
+                android:textColor="@color/text_secondary"
                 android:textSize="12sp"
-                android:textColor="@color/text_secondary" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvUser" />
 
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

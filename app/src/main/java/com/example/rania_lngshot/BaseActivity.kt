@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
+import com.example.rania_lngshot.Settings.SettingsFragment
 import com.example.rania_lngshot.home.HomeFragment
 import com.example.rania_lngshot.about.AboutFragment
 import com.example.rania_lngshot.profile.ProfileFragment
@@ -40,6 +41,10 @@ class BaseActivity : AppCompatActivity() {
                 }
                 R.id.profile -> {
                     replaceFragment(ProfileFragment())
+                    true
+                }
+                R.id.nav_settings -> {
+                    replaceFragment(SettingsFragment())
                     true
                 }
                 else ->false

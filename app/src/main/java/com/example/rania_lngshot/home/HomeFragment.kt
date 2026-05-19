@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.edit
 import androidx.fragment.app.Fragment
 import com.example.rania_lngshot.AuthActivity
@@ -15,6 +16,7 @@ import com.example.rania_lngshot.databinding.FragmentHomeBinding
 import com.example.rania_lngshot.home.pertemuan_2.SecondActivity
 import com.example.rania_lngshot.home.pertemuan_4.FourthActivity
 import com.example.rania_lngshot.home.pertemuan_7.SeventhActivity
+import com.google.android.material.chip.Chip
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class HomeFragment : Fragment() {
@@ -65,6 +67,43 @@ class HomeFragment : Fragment() {
             intent.putExtra("from", "Rumbai")
             intent.putExtra("age", 25)
             startActivity(intent)
+        }
+
+        binding.chipGroupFilter.setOnCheckedStateChangeListener { group, checkedIds ->
+
+            val selectedChipId = checkedIds.firstOrNull()
+
+            if (selectedChipId != null) {
+
+                val chip = group.findViewById<Chip>(selectedChipId)
+
+                when (chip.text.toString()) {
+
+                    "Terbaru" -> {
+                        binding.btnToSec.visibility = View.VISIBLE
+                        binding.btnToFourth.visibility = View.VISIBLE
+                        binding.btnToSeventh.visibility = View.VISIBLE
+                    }
+
+                    "Penting" -> {
+                        binding.btnToSec.visibility = View.GONE
+                        binding.btnToFourth.visibility = View.VISIBLE
+                        binding.btnToSeventh.visibility = View.VISIBLE
+                    }
+
+                    "Belum Dibaca" -> {
+                        binding.btnToSec.visibility = View.VISIBLE
+                        binding.btnToFourth.visibility = View.GONE
+                        binding.btnToSeventh.visibility = View.GONE
+                    }
+                }
+
+                Toast.makeText(
+                    requireContext(),
+                    "Filter: ${chip.text}",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
 
         binding.btnLogout.setOnClickListener {
