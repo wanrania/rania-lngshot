@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 import com.example.rania_lngshot.AuthActivity
 import com.example.rania_lngshot.MainActivity
 import com.example.rania_lngshot.databinding.FragmentHomeBinding
+import com.example.rania_lngshot.home.pertemuan_10.TenthActivity
 import com.example.rania_lngshot.home.pertemuan_2.SecondActivity
 import com.example.rania_lngshot.home.pertemuan_4.FourthActivity
 import com.example.rania_lngshot.home.pertemuan_7.SeventhActivity
@@ -69,6 +70,14 @@ class HomeFragment : Fragment() {
             startActivity(intent)
         }
 
+        binding.btnTenth.setOnClickListener {
+            val intent = Intent(requireContext(), TenthActivity::class.java)
+            intent.putExtra("name", "Politeknik Caltex Riau")
+            intent.putExtra("from", "Rumbai")
+            intent.putExtra("age", 25)
+            startActivity(intent)
+        }
+
         binding.chipGroupFilter.setOnCheckedStateChangeListener { group, checkedIds ->
 
             val selectedChipId = checkedIds.firstOrNull()
@@ -83,18 +92,21 @@ class HomeFragment : Fragment() {
                         binding.btnToSec.visibility = View.VISIBLE
                         binding.btnToFourth.visibility = View.VISIBLE
                         binding.btnToSeventh.visibility = View.VISIBLE
+                        binding.btnTenth.visibility = View.VISIBLE
                     }
 
                     "Penting" -> {
                         binding.btnToSec.visibility = View.GONE
                         binding.btnToFourth.visibility = View.VISIBLE
                         binding.btnToSeventh.visibility = View.VISIBLE
+                        binding.btnTenth.visibility = View.VISIBLE
                     }
 
                     "Belum Dibaca" -> {
                         binding.btnToSec.visibility = View.VISIBLE
                         binding.btnToFourth.visibility = View.GONE
                         binding.btnToSeventh.visibility = View.GONE
+                        binding.btnTenth.visibility = View.VISIBLE
                     }
                 }
 
