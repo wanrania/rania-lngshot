@@ -8,6 +8,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import com.example.rania_lngshot.AuthActivity
+import com.example.rania_lngshot.onboarding.OnboardingActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 class SplashScreenActivity : AppCompatActivity() {
@@ -30,8 +31,13 @@ class SplashScreenActivity : AppCompatActivity() {
             finish()
         }
         lifecycleScope.launch {
-            delay(2000) //simulasi pengambilan data selama 2 detik
-            var intent = Intent(this@SplashScreenActivity, AuthActivity::class.java)
+            delay(2000)
+
+            val intent = Intent(
+                this@SplashScreenActivity,
+                OnboardingActivity::class.java
+            )
+
             startActivity(intent)
             finish()
         }
