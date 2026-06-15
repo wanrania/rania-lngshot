@@ -12,6 +12,7 @@ import com.example.rania_lngshot.home.HomeFragment
 import com.example.rania_lngshot.about.AboutFragment
 import com.example.rania_lngshot.profile.ProfileFragment
 import com.example.rania_lngshot.databinding.ActivityBaseBinding
+import com.example.rania_lngshot.note.NoteFragment
 
 class BaseActivity : AppCompatActivity() {
     private lateinit var binding: ActivityBaseBinding
@@ -45,6 +46,10 @@ class BaseActivity : AppCompatActivity() {
                 }
                 R.id.nav_settings -> {
                     replaceFragment(SettingsFragment())
+                    true
+                }
+                R.id.note -> {
+                    replaceFragment(NoteFragment())
                     true
                 }
                 else ->false
