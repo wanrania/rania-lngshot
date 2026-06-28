@@ -200,6 +200,27 @@
                         app:strokeColor="#DDE290"
                         app:strokeWidth="1.5dp"/>
 
+                    <!-- MENU 6 -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnAgendaDesa"
+                        android:layout_width="0dp"
+                        android:layout_height="90dp"
+                        android:backgroundTint="#DDE290"
+                        android:text="Agenda Desa"
+                        android:textAllCaps="false"
+                        android:textColor="#1B3C73"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:cornerRadius="22dp"
+                        app:icon="@drawable/ic_home"
+                        app:iconGravity="top"
+                        app:iconPadding="10dp"
+                        app:iconTint="#1B3C73"
+                        app:layout_columnWeight="1"
+                        app:layout_gravity="fill_horizontal"
+                        app:strokeColor="#DDE290"
+                        app:strokeWidth="1.5dp"/>
+
                 </androidx.gridlayout.widget.GridLayout>
 
                 <!-- CHIP GROUP -->

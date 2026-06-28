@@ -16,6 +16,7 @@ import com.example.rania_lngshot.AuthActivity
 import com.example.rania_lngshot.MainActivity
 import com.example.rania_lngshot.data.api.PhotoApiClient
 import com.example.rania_lngshot.databinding.FragmentHomeBinding
+import com.example.rania_lngshot.home.agenda_desa.AgendaDesaActivity
 import com.example.rania_lngshot.home.pertemuan_10.TenthActivity
 import com.example.rania_lngshot.home.pertemuan_2.SecondActivity
 import com.example.rania_lngshot.home.pertemuan_4.FourthActivity
@@ -87,6 +88,15 @@ class HomeFragment : Fragment() {
         // Pertemuan 10
         binding.btnTenth.setOnClickListener {
             val intent = Intent(requireContext(), TenthActivity::class.java)
+            intent.putExtra("name", "Politeknik Caltex Riau")
+            intent.putExtra("from", "Rumbai")
+            intent.putExtra("age", 25)
+            startActivity(intent)
+        }
+
+        // Pertemuan 10
+        binding.btnAgendaDesa.setOnClickListener {
+            val intent = Intent(requireContext(), AgendaDesaActivity::class.java)
             intent.putExtra("name", "Politeknik Caltex Riau")
             intent.putExtra("from", "Rumbai")
             intent.putExtra("age", 25)
